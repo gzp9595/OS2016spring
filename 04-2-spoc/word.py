@@ -4,10 +4,10 @@ addr = ['c', 'c', 'd', 'b', 'c', 'e', 'c', 'e', 'a', 'd']
 t = 4
 for i in addr:
     if not i in memory:
-        print i+"\tmiss"
+        print "access",i,"miss"
         memory.append(i)
     else:
-        print i+"\thit"
+        print "access",i,"hit"
     if (len(tmp) == t):
         tmp = tmp[1:]
         tmp.append(i)
@@ -15,7 +15,7 @@ for i in addr:
         tmp.append(i)
     for i in memory:
         if not i in tmp:
-            print i+"\tfilter"
+            print "access",i,"filter"
             memory.remove(i)
             
 
