@@ -22,7 +22,9 @@ for current in xrange(ACCESS_COUNT):
             if (len(D) > MEM_SIZE):
                 tmp = D.items()
                 tmp.sort(lambda x, y: x[1] - y[1])
-                D = dict(tmp[1:])
+                D = {}
+                for i in tmp[1:]:
+                    D[i[0]] = i[1]
         else:
             tmp = []
             for i in D.items():
